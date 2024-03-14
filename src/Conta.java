@@ -1,15 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+public class Conta {
+    //1. Atributos
+    public String conta;
+    public String agencia;
+    public double saldo;
+    public String nomeCliente;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    //2. metodos
+    public boolean sacar(double valor){
+        if(valor<=saldo){
+            saldo -= valor;
+            return true;
         }
+        return false;
+    }
+    public boolean depositar(double valor){
+        if(valor > 0){
+            saldo += valor;
+            return true;
+        }
+        return false;
+    }
+    public void imprimir(){
+        System.out.println("conta = " + conta);
+        System.out.println("agencia = " + agencia);
+        System.out.println("saldo = " + saldo);
+        System.out.println("nomeCliente = " + nomeCliente);
     }
 }
